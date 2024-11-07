@@ -1,0 +1,327 @@
+    
+/*Atur font keseluruhann*/
+body{
+    font-family: 'Lora','Times New Roman', Times, serif,sans-serif;
+    color: white;
+    background-color: #EEEE;
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+header .title{
+    display: flex;
+    background-image: url("/aot web/assets/aot-for-title.png");
+    max-height: 50em;
+    background-repeat:no-repeat ;
+    background-attachment:fixed ;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.backgriund-image{
+    filter: brightness(80%);
+}
+.title h1 {
+    display: flex;
+    color:white;
+    text-shadow: -2px 2px 5px black,0 0 5px #EEEE, 0 0 10px #EEEE, 0 0 15px #EEEE;
+    text-align: center;
+    font-size: 8vw;
+    font-weight: 1000;
+    justify-content: center;
+}
+
+
+
+/*Atur navigasi*/
+
+.nav-container{
+    box-shadow:-6px 6px 5px gray;
+    padding: auto;
+    border-radius: 30px;
+    background-color:black;
+    object-fit: cover;
+    max-width: fit-content;
+}
+
+.nav-container ul{
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    margin: 20px;
+    text-align: center;    
+}
+
+.nav-container ul a{
+    list-style-type: none ;
+    text-decoration: none;
+    color: #EEEE;
+}
+
+.nav-container h2{
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+#navcard{
+    margin: 40px;
+    transition: all 0.8s;
+    position: relative;
+    overflow: hidden;
+    height:320px;
+
+}
+
+#navcard h2 {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#navcard img {
+    transition: transform 0.3s ease-in-out;
+}
+
+#navcard:hover h2 {
+    opacity: 0;
+}
+
+#navcard:hover img {
+    transform: scale(1.03);
+    overflow: hidden;
+}
+
+/*Gambar di  navigasi*/
+
+.nav-img{
+    max-width: 250px;
+    border-radius:30px;
+}
+
+.colossal img{
+    height: 250px;
+}
+
+
+/*Atur body*/
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Atur main*/
+main{
+    display: flex;
+    gap:20px;
+}
+
+
+/*Atur aside*/
+
+main aside.aot{
+    display: flex;
+    align-items: center;
+    flex-direction: column ;
+    max-width:300px;
+    max-height: 850px;
+    order:1; 
+    padding: 20px;
+    margin: 20px;
+    margin-right: 0px;
+    box-shadow: -6px 5px 6px gray;   
+    border-radius: 30px;
+    flex-grow: 0;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: black;
+}
+.aot p{
+    text-align: justify;
+}
+/*Tabel aside*/ 
+main aside.aot table{
+    text-align: justify;
+}
+
+aside.aot table td{
+    text-align: center;
+}
+
+.aot p, .aot h3{
+    margin:10px;
+}
+    
+.genre {
+    display: flex;
+    font-size: 80%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.genre p {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+/*Gambar aside*/
+aside.aot img.aside-img{
+    max-width: 250px;
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.aside-img:hover{
+    transform: scale(1.03);
+}
+
+/*Atur konten*/
+
+
+div.content{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 2;
+    text-align: justify;    
+    font-size: 1.2em;
+}
+
+#intro .first-paragraph::first-letter{
+    font-size: 3em;
+}
+
+div p{
+    text-indent: 30px;
+}
+
+
+
+.path-fig{
+    margin: 0;
+    max-width: 800px;
+}
+
+
+/*atur content*/
+
+.content .content-card{
+    box-shadow: -6px 6px 5px gray;
+    padding: 20px;
+    margin-block: 20px;
+    border-radius: 30px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
+
+.content-card>img{
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.path-fig{
+    text-align: center;
+}
+
+.content-card .path{
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.content-card h2{
+    margin-bottom: 0;
+}
+
+.content-card h3{
+    margin-top: 10px;
+    font-size:90%;
+}
+
+.content-card h2, h3{
+    text-align: center;
+}
+
+
+/*atur image content*/
+
+.content-card img{
+    object-fit: cover;
+}
+
+.path{
+    max-width: 800px;
+}
+
+.founding-content{
+    max-width: 800px;
+}
+
+.jaw-image-content{
+    max-height: 500px;
+    max-width: 800px;
+}
+
+.colossal-image-content{
+    max-width: 800px;
+}
+
+.attack-image-content{
+    max-width: 800px;
+    max-height: 1000px;
+}
+
+.beast-image-content{
+    max-width: 800px;
+}
+
+.cart-image-content, .armor-image-content{
+    max-width: 800px;
+}
+
+
+footer{
+    background-color: black;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width:1000px) {
+    main{
+        flex-direction:column;
+    }
+
+    title,.nav-container{
+        width: 1000px;
+    }
+    .content{
+        order: 1;
+    }
+    aside{
+        order:0;
+        width: auto;
+    }
+}
+
+@media  screen and (max-width:800px) {
+    .content-card{
+        width: 800px;
+    }
+
+        .nav-container, .title{
+        max-width: 800px;
+    }
+}
+
