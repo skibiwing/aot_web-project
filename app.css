@@ -25,9 +25,6 @@ header .title{
     margin-bottom: 20px;
 }
 
-.backgriund-image{
-    filter: brightness(80%);
-}
 .title h1 {
     display: flex;
     color:white;
@@ -49,6 +46,7 @@ header .title{
     background-color:black;
     object-fit: cover;
     max-width: fit-content;
+    margin-bottom: 20px;
 }
 
 .nav-container ul{
@@ -58,7 +56,7 @@ header .title{
     align-items: center;
     justify-content: space-between;
     padding-left: 0;
-    margin: 20px;
+    margin: 0;
     text-align: center;    
 }
 
@@ -79,8 +77,8 @@ header .title{
     transition: all 0.8s;
     position: relative;
     overflow: hidden;
-    height:320px;
-
+    height:340px;
+    width: 260px;
 }
 
 #navcard h2 {
@@ -127,6 +125,10 @@ main{
 
 /*Atur aside*/
 
+.genre p{
+    text-indent: 0px;
+}
+
 main aside.aot{
     display: flex;
     align-items: center;
@@ -162,15 +164,28 @@ aside.aot table td{
     
 .genre {
     display: flex;
-    font-size: 80%;
+    font-size: 87%;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
+    gap: 20px;
+
 }
 .genre p {
     margin: 0;
+    max-width: 100px;
     padding: 5px;
     text-align: center;
+    border-radius:20px ;
+    border-style: solid;
+    border-color: white;
+    opacity: 80%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.genre p:hover{
+    opacity: 100%;
+    font-weight: bolder;
+    transform: scale(1.04);
 }
 
 /*Gambar aside*/
@@ -178,14 +193,112 @@ aside.aot img.aside-img{
     max-width: 250px;
     border-radius: 30px;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .aside-img:hover{
     transform: scale(1.03);
 }
 
+.dropdown{
+    z-index: 1000;
+    color: black;
+    position: fixed;
+    right: 0;
+    top: 50%; 
+    transform: translateY(-50%); 
+    display: flex;
+    align-items: center; 
+}
+.dropdown ul{
+    list-style-type: none;
+}
+
+.dropdown ul a{
+    text-decoration: none;
+    color: #EEEE;
+}
+
+.dropdown .arrow{
+    font-size: 2em;
+    margin-right: 20px;
+    position: relative  ;
+    height: 50px;    
+    padding: 0;
+    opacity: 10%;
+    border-radius: 100%;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown .arrow p{
+    align-self: center;
+}
+
+.dropdown .arrow:hover{
+    background-color: black;
+    color: #EEEE;
+    opacity: 1;
+}
+
+.dropdown .arrow{
+    font-size: 2em;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.dropdown.active .arrow{
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    right: calc(100% + 10px); 
+}
+
+
+
+.dropdown.active .toc ul{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.arrow{
+    cursor: pointer;
+}
+
+.toc ul{
+    display: flex;
+    flex-direction: column;
+    gap:1.5em;
+    cursor: pointer;
+    background-color:black ;
+    border-radius: 30px;
+    padding:20px;
+    box-shadow: -6px 6px 5px black ;
+    display: none;
+}
+
+.toc ul li a{
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+}
+
+.toc ul li a:hover{
+    background-color: #EEEE;
+    border-radius: 30px;
+    font-size:1.3em;
+    color: black;
+    
+}
+
 /*Atur konten*/
 
+.before-fig{
+    margin-bottom: 25px;
+}
 
 div.content{
     display:flex;
@@ -201,6 +314,7 @@ div.content{
 
 div p{
     text-indent: 30px;
+    margin: 10px;
 }
 
 
@@ -227,10 +341,12 @@ div p{
 .content-card>img{
     object-fit: cover;
     border-radius: 30px;
+    
 }
 
 .path-fig{
     text-align: center;
+
 }
 
 .content-card .path{
@@ -239,11 +355,19 @@ div p{
 }
 
 .content-card h2{
-    margin-bottom: 0;
+    margin-bottom: 10px;
+    background-color: #EEEE;
+    color: black;
+    border-radius: 30px;
+    width:50%;
+    box-shadow: -1px 3px 4px #EEEE ;
+    text-shadow: -2px 2px 5px gray;
+    align-self: center;
+    top:0;
 }
 
 .content-card h3{
-    margin-top: 10px;
+    margin-bottom: 30px;
     font-size:90%;
 }
 
@@ -251,20 +375,94 @@ div p{
     text-align: center;
 }
 
+.content-card h3.general-beast-abilities{
+    margin-bottom: 10px;
+}
+
+.content-card h3.zeke-abilities{
+    margin-top:0;
+}
 
 /*atur image content*/
 
-.content-card img{
+
+
+.content-card .fig-img-content{
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-card .fig-img-content:hover{
+    transform: scale(1.02);
 }
 
 .path{
-    max-width: 800px;
+    max-width: 700px;
+    transition: transform 0.3s ease-in-out;
+
 }
 
-.founding-content{
-    max-width: 800px;
+.path:hover{
+    transform: scale(1.03);
 }
+
+/* Slider */
+
+.slider{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    position: relative;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+
+.slides img{
+    width: 500px;
+    max-height: 500px;
+    display: none;
+    border-radius: 30px;
+}
+
+.slider button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 1000px;
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider button:hover{
+    background-color: white;
+    color: black;
+}
+
+.next{
+    right: 0;
+    bottom:0;
+}
+
+.prev{
+    left: 0;
+    bottom: 0;
+}
+
+
+img.display_slide{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .jaw-image-content{
     max-height: 500px;
@@ -290,12 +488,51 @@ div p{
 
 
 footer{
+    box-shadow: -6px 6px 5px gray ;
+    border-radius: 30px 30px 0px 0px;
     background-color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 footer a{
     text-decoration: none;
     color: white;
+    position: relative;
+    transition: all 0.3s ;
+}
+
+footer *{
+    text-align: center;
+    justify-content: center;
+}
+
+footer table{
+    margin: 0 auto;
+}
+
+footer >p{
+    margin-bottom: 0;
+}
+
+td a::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 1px;
+    width: 170%;
+    right:0;
+    opacity: 0;
+    bottom: -5px;
+    transition: all 0.3s;
+}
+
+td a:hover{
+    font-weight: bolder;
+}
+
+td a:hover::before{
+    opacity: 100%;
 }
 
 @media screen and (max-width:1000px) {
@@ -320,8 +557,12 @@ footer a{
         width: 800px;
     }
 
-        .nav-container, .title{
+    .nav-container{
         max-width: 800px;
+    }
+
+    .title{
+        width: 800px;
     }
 }
 
