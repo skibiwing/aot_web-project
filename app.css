@@ -223,17 +223,13 @@ aside.aot img.aside-img{
     font-size: 2em;
     margin-right: 20px;
     position: relative  ;
-    height: 50px;    
-    padding: 0;
+    height: 100%;    
+    padding: 0 auto;
     opacity: 10%;
     border-radius: 100%;
-
     transition: all 0.3s ease-in-out;
 }
 
-.dropdown .arrow p{
-    align-self: center;
-}
 
 .dropdown .arrow:hover{
     background-color: black;
