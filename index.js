@@ -1,3 +1,4 @@
+// Slider Image
 document.addEventListener("DOMContentLoaded", initialize_all_sliders);
 
 function initialize_all_sliders() {
@@ -31,17 +32,20 @@ function show_slide(slider, slides, index) {
     slides.forEach((slide) => {
         slide.classList.remove("display_slide");
     });
+    
     slides[slide_index].classList.add("display_slide");
 
     slider.dataset.slideIndex = slide_index;
 }
 
+
+// Dropdown
 const dropDown = document.querySelector(".dropdown");
 const arrow = document.querySelector(".arrow");
 const tableOfContent= document.querySelector(".toc");
 
 clickFunction = arrow.addEventListener("click", function intializeArrow(){
-        dropDown.classList.toggle('active')
+        dropDown.classList.toggle('active');
     }
-    )
+)
 
