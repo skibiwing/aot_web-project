@@ -4,6 +4,13 @@ body{
     font-family: 'Lora','Times New Roman', Times, serif,sans-serif;
     color: white;
     background-color: #EEEE;
+    
+}
+
+.title header *,aside, .content *,footer *{
+    animation:appear ;
+    animation-timeline: view();
+    animation-range: entry 0, cover 40%;
 }
 
 
@@ -42,11 +49,11 @@ header .title{
 .nav-container{
     box-shadow:-6px 6px 5px gray;
     padding: auto;
+    overflow: hidden;
     border-radius: 30px;
     background-color:black;
     object-fit: cover;
-    max-width: fit-content;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .nav-container ul{
@@ -68,6 +75,8 @@ header .title{
 
 .nav-container h2{
     text-align: center;
+    font-size: 1.5em;
+    text-shadow: -2px 2px 5px black,0 0 5px #EEEE, 0 0 10px #EEEE, 0 0 15px #EEEE;
     list-style-type: none;
     text-decoration: none;
 }
@@ -76,9 +85,9 @@ header .title{
     margin: 40px;
     transition: all 0.8s;
     position: relative;
-    overflow: hidden;
     height:340px;
     width: 260px;
+    object-fit: cover;
 }
 
 #navcard h2 {
@@ -87,6 +96,7 @@ header .title{
 
 #navcard img {
     transition: transform 0.3s ease-in-out;
+    object-fit: cover;
 }
 
 #navcard:hover h2 {
@@ -95,12 +105,13 @@ header .title{
 
 #navcard:hover img {
     transform: scale(1.03);
-    overflow: hidden;
 }
 
 /*Gambar di  navigasi*/
 
 .nav-img{
+    overflow: hidden;
+    object-fit: cover;
     max-width: 250px;
     border-radius:30px;
 }
@@ -125,20 +136,17 @@ main{
 
 /*Atur aside*/
 
-.genre p{
-    text-indent: 0px;
-}
+
 
 main aside.aot{
     display: flex;
     align-items: center;
     flex-direction: column ;
-    max-width:300px;
+    object-fit: cover;
     max-height: 850px;
     order:1; 
     padding: 20px;
     margin: 20px;
-    margin-right: 0px;
     box-shadow: -6px 5px 6px gray;   
     border-radius: 30px;
     flex-grow: 0;
@@ -191,25 +199,30 @@ aside.aot table td{
 /*Gambar aside*/
 aside.aot img.aside-img{
     max-width: 250px;
+    position: relative;
     border-radius: 30px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
+
 
 .aside-img:hover{
     transform: scale(1.03);
 }
 
 .dropdown{
-    z-index: 1000;
+    z-index: 999;
     color: black;
     position: fixed;
     right: 0;
-    top: 50%; 
+    top: 45%; 
     transform: translateY(-50%); 
     display: flex;
     align-items: center; 
 }
+
+
+
 .dropdown ul{
     list-style-type: none;
 }
@@ -220,46 +233,48 @@ aside.aot img.aside-img{
 }
 
 .dropdown .arrow{
-    font-size: 2em;
-    margin-right: 20px;
-    position: relative  ;
-    height: 100%;    
+    position: relative;   
     padding: 0 auto;
-    opacity: 10%;
-    border-radius: 100%;
-    transition: all 0.3s ease-in-out;
-}
-
-
-.dropdown .arrow:hover{
-    background-color: black;
+    background-color:black;
     color: #EEEE;
-    opacity: 1;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    font-size: 2.5em;
+    cursor: pointer;
+    transform: translateX(700%);
+    border:2px solid #EEEE;
+    box-shadow: -1px 1px 2px #EEEE;
 }
 
-.dropdown .arrow{
-    font-size: 2em;
-    margin-right: 20px;
-    cursor: pointer;
+.dropdown:hover .arrow {
+    transform: translateX(390%);
+}
+
+.dropdown:hover .dropdown{
+    pointer-events: auto;
+   
 }
 
 .dropdown.active .arrow{
-    transform: translateY(-50%);
-    top: 50%;
+    transform: translateX(0);
     position: absolute;
-    right: calc(100% + 10px); 
+    right: calc(100% + 50px);
+    transform: rotateY(180deg); 
 }
 
 
-
-.dropdown.active .toc ul{
-    display: flex;
-    flex-direction: column;
+.arrow > p{
+    text-indent: 0;
+    margin: 10px;   
 }
 
-
-.arrow{
-    cursor: pointer;
+.dropdown .arrow:hover{
+    background-color: #EEEE;
+    border:2px solid black;
+    color: black;
+    box-shadow: -1px 1px 2px black;
 }
 
 .toc ul{
@@ -269,9 +284,17 @@ aside.aot img.aside-img{
     cursor: pointer;
     background-color:black ;
     border-radius: 30px;
-    padding:20px;
     box-shadow: -6px 6px 5px black ;
-    display: none;
+    overflow: hidden;
+    padding:20px ;
+    transition:all 0.3s ease-in-out;
+    transform: translateX(200%);
+}
+
+.dropdown.active .toc ul{
+    transform: translateX(0);   
+    display: flex;
+    flex-direction: column;
 }
 
 .toc ul li a{
@@ -299,7 +322,6 @@ aside.aot img.aside-img{
 div.content{
     display:flex;
     flex-direction: column;
-    flex-grow: 2;
     text-align: justify;    
     font-size: 1.2em;
 }
@@ -308,17 +330,12 @@ div.content{
     font-size: 3em;
 }
 
-div p{
+.content-card p{
     text-indent: 30px;
     margin: 10px;
 }
 
 
-
-.path-fig{
-    margin: 0;
-    max-width: 800px;
-}
 
 
 /*atur content*/
@@ -326,27 +343,30 @@ div p{
 .content .content-card{
     box-shadow: -6px 6px 5px gray;
     padding: 20px;
-    margin-block: 20px;
+    margin:20px;
     border-radius: 30px;
     background-color: black;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+
 }
 
 .content-card>img{
     object-fit: cover;
     border-radius: 30px;
-    
 }
 
 .path-fig{
+    margin: 0;
+    max-width: 700px;
     text-align: center;
-
+    object-fit: cover;
+    position: relative ;
+    align-self: center;
 }
 
 .content-card .path{
-    object-fit: cover;
+    max-width:100%;
     border-radius: 30px;
 }
 
@@ -426,21 +446,25 @@ div p{
 
 .slider button{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 25%;
     border-radius: 1000px;
-    font-size: 2rem;
+    font-size: 2em;
+    max-height: 50%;
     padding: 10px 15px;
-    background-color: hsla(0, 0%, 0%, 0.5);
+    background-color:black;
     color: white;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, opacity 0.01ms ease-in-out ;
 }
 
 .slider button:hover{
     background-color: white;
     color: black;
+}
+
+.slider button:active{
+    opacity: .3;
 }
 
 .next{
@@ -457,29 +481,12 @@ div p{
 img.display_slide{
     display: flex;
     flex-direction: row;
+    animation: fade 0.5s linear;
 }
 
-
-.jaw-image-content{
-    max-height: 500px;
-    max-width: 800px;
-}
-
-.colossal-image-content{
-    max-width: 800px;
-}
-
-.attack-image-content{
-    max-width: 800px;
-    max-height: 1000px;
-}
-
-.beast-image-content{
-    max-width: 800px;
-}
-
-.cart-image-content, .armor-image-content{
-    max-width: 800px;
+@keyframes fade{
+    from{opacity: .1;}
+    to{opacity: 1;}
 }
 
 
@@ -535,30 +542,31 @@ td a:hover::before{
     main{
         flex-direction:column;
     }
-
-    title,.nav-container{
-        width: 1000px;
-    }
     .content{
         order: 1;
     }
+    .slider button{
+        background-color: transparent;
+
+    }
+    .slider button:hover{
+        background-color: transparent;
+        color: #EEEE;
+    }
+
     aside{
         order:0;
-        width: auto;
+        max-width:1000px;
     }
 }
 
-@media  screen and (max-width:800px) {
-    .content-card{
-        width: 800px;
+@keyframes appear{
+    from{opacity: 0;
+         scale:.4;
+         transform:translateX(-100%);
     }
-
-    .nav-container{
-        max-width: 800px;
-    }
-
-    .title{
-        width: 800px;
+    to{opacity: 1;
+       scale: 1;
+       transform: translateX(0%);
     }
 }
-
