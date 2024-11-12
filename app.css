@@ -1,4 +1,7 @@
-    
+html{
+    scroll-behavior: smooth;
+}
+
 /*Atur font keseluruhann*/
 body{
     font-family: 'Lora','Times New Roman', Times, serif,sans-serif;
@@ -7,12 +10,23 @@ body{
     
 }
 
-.title header *,aside, .content *,footer *{
-    animation:appear ;
+.title header, .content *{
+    animation:appear linear;
     animation-timeline: view();
     animation-range: entry 0, cover 40%;
 }
 
+aside{
+    animation: forAside linear;
+    animation-timeline: view();
+    animation-range: entry 0, cover 40% ;
+}
+
+footer{
+    animation: forFooter linear;
+    animation-timeline: view();
+    animation-range: entry 0, cover 40% ;
+}
 
 header{
     display: flex;
@@ -107,6 +121,7 @@ header .title{
     transform: scale(1.03);
 }
 
+
 /*Gambar di  navigasi*/
 
 .nav-img{
@@ -197,9 +212,10 @@ aside.aot table td{
 }
 
 /*Gambar aside*/
+
+
 aside.aot img.aside-img{
     max-width: 250px;
-    position: relative;
     border-radius: 30px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
@@ -221,7 +237,9 @@ aside.aot img.aside-img{
     align-items: center; 
 }
 
-
+.dropdown ul{
+    width: 200%;
+}
 
 .dropdown ul{
     list-style-type: none;
@@ -444,6 +462,10 @@ div.content{
     border-radius: 30px;
 }
 
+
+
+
+
 .slider button{
     position: absolute;
     top: 25%;
@@ -466,6 +488,7 @@ div.content{
 .slider button:active{
     opacity: .3;
 }
+
 
 .next{
     right: 0;
@@ -493,7 +516,7 @@ img.display_slide{
 footer{
     box-shadow: -6px 6px 5px gray ;
     border-radius: 30px 30px 0px 0px;
-    background-color: black;
+    background-color: black;    
     display: flex;
     flex-direction: column;
 }
@@ -505,6 +528,7 @@ footer a{
     transition: all 0.3s ;
 }
 
+
 footer *{
     text-align: center;
     justify-content: center;
@@ -512,6 +536,10 @@ footer *{
 
 footer table{
     margin: 0 auto;
+}
+footer h1{
+    font-size:99.9% ;
+    margin-bottom: 0;
 }
 
 footer >p{
@@ -545,6 +573,7 @@ td a:hover::before{
     .content{
         order: 1;
     }
+
     .slider button{
         background-color: transparent;
 
@@ -556,17 +585,52 @@ td a:hover::before{
 
     aside{
         order:0;
-        max-width:1000px;
+        max-width:100%;
+        overflow: hidden;
+    }   
+}
+
+@media  screen and (max-width:735px) {
+
+    .nav-container ul li {
+        object-position : center;
     }
+    
 }
 
 @keyframes appear{
     from{opacity: 0;
-         scale:.4;
+         scale:.8;
          transform:translateX(-100%);
     }
     to{opacity: 1;
        scale: 1;
-       transform: translateX(0%);
+       transform: translateX(0);
     }
+}
+
+@keyframes forAside {
+    from{
+        opacity: 0;
+        scale: .8;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes forFooter {
+    from{
+        opacity: 0;
+        scale: .8;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
+    }   
 }
